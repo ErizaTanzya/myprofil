@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="https://static.readdy.ai/static/e.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio | Ertawanny</title>
+  
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#03dac6',
+            secondary: '#bb86fc'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <!-- 1. Impor Google Font di <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+
+
+  <style>
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      min-height: 100vh;
+    }
+    
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .floating { animation: float 6s ease-in-out infinite; }
+    
+    .glow {
+      box-shadow: 0 0 20px rgba(3, 218, 198, 0.3), 0 0 40px rgba(3, 218, 198, 0.1);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(3, 218, 198, 0.2);
+    }
+    
+    .skill-progress {
+      background: linear-gradient(90deg, #03dac6 0%, #bb86fc 100%);
+      height: 4px;
+      border-radius: 2px;
+      transition: width 2s ease-in-out;
+    }
+    
+    .nav-overlay {
+      backdrop-filter: blur(10px);
+      background: rgba(15, 15, 35, 0.9);
+    }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                  url('https://readdy.ai/api/search-image?query=cosmic%20galaxy%20nebula%20stars%20deep%20space%20purple%20blue%20teal%20colors%20professional%20modern%20clean%20background%20digital%20art%20high%20resolution&width=1920&height=1080&seq=hero001&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="text-white">
+  
+  <div class="particles">
+    <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 30%; left: 80%; animation-delay: 1s;"></div>
+    <div class="particle" style="top: 60%; left: 15%; animation-delay: 2s;"></div>
+    <div class="particle" style="top: 80%; left: 70%; animation-delay: 0.5s;"></div>
+    <div class="particle" style="top: 25%; left: 50%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="top: 70%; left: 35%; animation-delay: 2.5s;"></div>
+  </div>
+
+  <nav class="fixed top-0 right-0 w-80 h-full nav-overlay transform translate-x-full transition-transform duration-300 z-50" id="mobileNav">
+    <div class="p-8">
+      <button class="absolute top-6 right-6 text-2xl text-primary hover:text-secondary transition-colors" id="closeNav">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <i class="ri-close-line"></i>
+        </div>
+      </button>
+      
+      <ul class="mt-16 space-y-6">
+        <li><a href="#about" class="flex items-center text-lg text-white hover:text-primary transition-colors">
+          <div class="w-6 h-6 flex items-center justify-center mr-3">
+            <i class="ri-user-line"></i>
+          </div>
+          About Me
+        </a></li>
+        <li><a href="#skills" class="flex items-center text-lg text-white hover:text-primary transition-colors">
+          <div class="w-6 h-6 flex items-center justify-center mr-3">
+            <i class="ri-lightbulb-line"></i>
+          </div>
+          Skills
+        </a></li>
+        <li><a href="#projects" class="flex items-center text-lg text-white hover:text-primary transition-colors">
+          <div class="w-6 h-6 flex items-center justify-center mr-3">
+            <i class="ri-folder-line"></i>
+          </div>
+          Projects
+        </a></li>
+        <li><a href="#experience" class="flex items-center text-lg text-white hover:text-primary transition-colors">
+          <div class="w-6 h-6 flex items-center justify-center mr-3">
+            <i class="ri-briefcase-line"></i>
+          </div>
+          Experience
+        </a></li>
+        <li><a href="#contact" class="flex items-center text-lg text-white hover:text-primary transition-colors">
+          <div class="w-6 h-6 flex items-center justify-center mr-3">
+            <i class="ri-mail-line"></i>
+          </div>
+          Contact
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none transition-opacity duration-300" id="navOverlay"></div>
+
+  <button class="fixed top-6 right-6 z-50 text-2xl text-primary hover:text-secondary transition-colors" id="hamburger">
+    <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-menu-line"></i>
+    </div>
+  </button>
+
+  <header class="hero-bg min-h-screen flex items-center justify-center relative z-10">
+    <div class="text-center px-4">
+      <div class="floating mb-8">
+        <img src="https://files.catbox.moe/ulgqkx.jpg" 
+             alt="Melqy Profile" 
+             class="w-40 h-40 rounded-full mx-auto border-4 border-primary glow object-cover">
+      </div>
+      
+ <!-- 2. Judul dengan font baru -->
+<h1 class="text-5xl md:text-6xl font-bold mb-4" style="font-family: 'Orbitron', sans-serif;">
+  <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    Melqy Ertawanny
+  </span>
+</h1>
+      
+      <p class="text-xl md:text-2xl text-gray-300 mb-6">Graphic Designer & Newbie Developer</p>
+      
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+        Crafting digital experiences that bridge the gap between imagination and reality. 
+        Passionate about creating innovative solutions with modern technologies.
+      </p>
+      
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="#" class="text-2xl text-primary hover:text-secondary transition-colors">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <i class="ri-github-fill"></i>
+          </div>
+        </a>
+        <a href="#" class="text-2xl text-primary hover:text-secondary transition-colors">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <i class="ri-linkedin-fill"></i>
+          </div>
+        </a>
+        <a href="#" class="text-2xl text-primary hover:text-secondary transition-colors">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <i class="ri-twitter-fill"></i>
+          </div>
+        </a>
+        <a href="#" class="text-2xl text-primary hover:text-secondary transition-colors">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <i class="ri-mail-fill"></i>
+          </div>
+        </a>
+      </div>
+      
+      <button onclick="window.location.href='https://ask-melqy.vercel.app'" 
+        class="bg-gradient-to-r from-primary to-secondary text-black px-8 py-3 !rounded-button font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all whitespace-nowrap">
+  Ask My Work
+</button>
+    </div>
+  </header>
+
+  <section id="about" class="py-20 px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 text-primary">About Me</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-semibold mb-6">My Journey</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            With over 3 years of experience in web development, I've had the privilege of working with 
+            startups and established companies to bring their digital visions to life. My passion lies 
+            in creating seamless user experiences that not only look beautiful but also solve real-world problems.
+          </p>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            I specialize in modern JavaScript frameworks, cloud technologies, and have a keen eye for design. 
+            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+            or stargazing – which inspired this portfolio's cosmic theme.
+          </p>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-primary/20 text-primary rounded-full text-sm">Problem Solver</span>
+            <span class="px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm">Creative Thinker</span>
+            <span class="px-4 py-2 bg-primary/20 text-primary rounded-full text-sm">Team Player</span>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-code-line text-primary"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Clean Code Advocate</h4>
+                <p class="text-gray-400 text-sm">Writing maintainable, scalable solutions</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-palette-line text-secondary"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Design Enthusiast</h4>
+                <p class="text-gray-400 text-sm">Bridging design and development</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-rocket-line text-primary"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Innovation Driven</h4>
+                <p class="text-gray-400 text-sm">Always exploring new technologies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-20 px-4 bg-gray-900/30 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 text-primary">Skills & Expertise</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-code-s-slash-line text-primary"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">React / Next.js</span>
+                <span class="text-sm text-primary">95%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[95%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">TypeScript</span>
+                <span class="text-sm text-primary">90%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[90%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Tailwind CSS</span>
+                <span class="text-sm text-primary">98%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[98%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+          <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-server-line text-secondary"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Node.js / Express</span>
+                <span class="text-sm text-secondary">92%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[92%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Python / Django</span>
+                <span class="text-sm text-secondary">85%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[85%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">PostgreSQL / MongoDB</span>
+                <span class="text-sm text-secondary">88%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[88%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-cloud-line text-primary"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Cloud & DevOps</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">AWS / Azure</span>
+                <span class="text-sm text-primary">80%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[80%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Docker / Kubernetes</span>
+                <span class="text-sm text-primary">75%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[75%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">CI/CD Pipelines</span>
+                <span class="text-sm text-primary">82%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[82%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+          <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-smartphone-line text-secondary"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Mobile Development</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">React Native</span>
+                <span class="text-sm text-secondary">87%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[87%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Flutter</span>
+                <span class="text-sm text-secondary">70%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[70%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">iOS / Android</span>
+                <span class="text-sm text-secondary">65%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[65%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-pencil-ruler-2-line text-primary"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Design & UX</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Figma / Adobe XD</span>
+                <span class="text-sm text-primary">93%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[93%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">UI/UX Design</span>
+                <span class="text-sm text-primary">89%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[89%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Prototyping</span>
+                <span class="text-sm text-primary">91%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[91%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 p-6 rounded-xl card-hover">
+          <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-tools-line text-secondary"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Tools & Workflow</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Git / GitHub</span>
+                <span class="text-sm text-secondary">96%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[96%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Agile / Scrum</span>
+                <span class="text-sm text-secondary">88%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[88%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-sm">Testing / QA</span>
+                <span class="text-sm text-secondary">84%</span>
+              </div>
+              <div class="bg-gray-700 rounded-full h-2">
+                <div class="skill-progress w-[84%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-20 px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 text-primary">Featured Projects</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-800/50 rounded-xl overflow-hidden card-hover">
+          <img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20interface%20clean%20design%20shopping%20cart%20product%20gallery%20mobile%20responsive%20dark%20theme&width=400&height=250&seq=project001&orientation=landscape" 
+               alt="E-commerce Platform" 
+               class="w-full h-48 object-cover object-top">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+            <p class="text-gray-400 mb-4">A full-stack e-commerce solution with real-time inventory management, payment integration, and advanced analytics dashboard.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">React</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Node.js</span>
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">MongoDB</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Stripe</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-external-link-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 rounded-xl overflow-hidden card-hover">
+          <img src="https://readdy.ai/api/search-image?query=task%20management%20app%20interface%20kanban%20board%20project%20collaboration%20team%20workspace%20modern%20ui%20design&width=400&height=250&seq=project002&orientation=landscape" 
+               alt="Task Management App" 
+               class="w-full h-48 object-cover object-top">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+            <p class="text-gray-400 mb-4">Collaborative project management tool with real-time updates, file sharing, and advanced reporting features.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Vue.js</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Express</span>
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Socket.io</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">PostgreSQL</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-external-link-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 rounded-xl overflow-hidden card-hover">
+          <img src="https://readdy.ai/api/search-image?query=cryptocurrency%20trading%20dashboard%20charts%20graphs%20financial%20data%20visualization%20modern%20interface%20dark%20theme&width=400&height=250&seq=project003&orientation=landscape" 
+               alt="Crypto Trading Dashboard" 
+               class="w-full h-48 object-cover object-top">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Crypto Trading Dashboard</h3>
+            <p class="text-gray-400 mb-4">Real-time cryptocurrency trading platform with advanced charting, portfolio tracking, and automated trading strategies.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Next.js</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Python</span>
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Redis</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">WebSocket</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-external-link-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 rounded-xl overflow-hidden card-hover">
+          <img src="https://readdy.ai/api/search-image?query=social%20media%20mobile%20app%20interface%20user%20profiles%20messaging%20feed%20modern%20ui%20design%20clean%20layout&width=400&height=250&seq=project004&orientation=landscape" 
+               alt="Social Media App" 
+               class="w-full h-48 object-cover object-top">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Social Media App</h3>
+            <p class="text-gray-400 mb-4">Cross-platform social networking app with video sharing, live streaming, and AI-powered content recommendations.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">React Native</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">GraphQL</span>
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">AWS</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">TensorFlow</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-external-link-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 rounded-xl overflow-hidden card-hover">
+          <img src="https://readdy.ai/api/search-image?query=ai%20chatbot%20interface%20conversation%20bubbles%20artificial%20intelligence%20modern%20design%20clean%20layout%20assistant&width=400&height=250&seq=project005&orientation=landscape" 
+               alt="AI Chatbot Platform" 
+               class="w-full h-48 object-cover object-top">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">AI Chatbot Platform</h3>
+            <p class="text-gray-400 mb-4">Intelligent conversational AI platform with natural language processing, multi-language support, and custom training capabilities.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Python</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">FastAPI</span>
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">OpenAI</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Docker</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-external-link-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/50 rounded-xl overflow-hidden card-hover">
+          <img src="https://readdy.ai/api/search-image?query=data%20visualization%20dashboard%20analytics%20charts%20graphs%20business%20intelligence%20modern%20interface%20clean%20design&width=400&height=250&seq=project006&orientation=landscape" 
+               alt="Analytics Dashboard" 
+               class="w-full h-48 object-cover object-top">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+            <p class="text-gray-400 mb-4">Comprehensive business intelligence platform with interactive visualizations, custom reports, and predictive analytics.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">D3.js</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Django</span>
+              <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Elasticsearch</span>
+              <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Pandas</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-external-link-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="experience" class="py-20 px-4 bg-gray-900/30 relative z-10">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-16 text-primary">Experience & Education</h2>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 text-secondary">Work Experience</h3>
+        
+        <div class="space-y-8">
+          <div class="relative pl-8 border-l-2 border-primary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">Junior Web Developer</h4>
+              <p class="text-primary mb-2">Freelance • 2023 - Present</p>
+              <p class="text-gray-400 mb-3">I started making small websites for friends and local shops. I mostly used HTML, CSS, and a little JavaScript. Still learning and trying to improve step by step.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">HTML</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">CSS</span>
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Basic JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-primary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-secondary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">Internship - IT Support</h4>
+              <p class="text-secondary mb-2">Local Company • 2024</p>
+              <p class="text-gray-400 mb-3">Helped with small computer problems like installing software, fixing printers, and setting up Wi-Fi. It was my first time working in an office environment.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Troubleshooting</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Networking Basics</span>
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Teamwork</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-primary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">Personal Projects</h4>
+              <p class="text-primary mb-2">Self-Learning • 2023 - 2025</p>
+              <p class="text-gray-400 mb-3">Made some small projects while learning, like a to-do list app and a simple calculator website. These helped me understand how coding works in practice.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Practice Projects</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Basic Coding</span>
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Problem Solving</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 text-secondary">Education & Certifications</h3>
+        
+        <div class="space-y-8">
+          <div class="relative pl-8 border-l-2 border-secondary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-secondary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">High School Diploma</h4>
+              <p class="text-secondary mb-2">Local High School • 2022 - 2023</p>
+              <p class="text-gray-400 mb-3">Finished high school with interest in computers and technology. Learned basic computer subjects and joined school tech club.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Computer Basics</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Technology Club</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-secondary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">FreeCodeCamp HTML & CSS</h4>
+              <p class="text-primary mb-2">FreeCodeCamp • 2024</p>
+              <p class="text-gray-400 mb-3">Learned the basics of making websites with HTML and CSS. Completed beginner exercises and projects.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">HTML</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-secondary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-secondary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">Google IT Support Certificate</h4>
+              <p class="text-secondary mb-2">Coursera • 2025</p>
+              <p class="text-gray-400 mb-3">Completed beginner-friendly program on computer basics, troubleshooting, and simple networking.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">IT Support</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Networking Basics</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-secondary/30">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+            <div class="bg-gray-800/50 p-6 rounded-xl">
+              <h4 class="text-xl font-semibold">Intro to JavaScript</h4>
+              <p class="text-primary mb-2">Online Course • 2024</p>
+              <p class="text-gray-400 mb-3">Basic course about how JavaScript works. Made small projects like buttons, calculators, and simple games.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">JavaScript Basics</span>
+                <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">Practice Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="contact" class="py-20 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 text-primary">Get In Touch</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold mb-6">Let's Work Together</h3>
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            I'm always interested in new opportunities and exciting projects. 
+            Whether you have a specific project in mind or just want to connect, 
+            I'd love to hear from you.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="text-gray-400">ertawanny27@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-phone-line text-secondary"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Phone</h4>
+                <p class="text-gray-400">+62 856-2458-2564</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Location</h4>
+                <p class="text-gray-400">West Java, ID</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h4 class="font-semibold mb-4">Follow Me</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-github-fill text-primary"></i>
+                </div>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-linkedin-fill text-primary"></i>
+                </div>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-twitter-fill text-primary"></i>
+                </div>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-dribbble-fill text-primary"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-800/50 p-8 rounded-xl">
+  <form class="space-y-6" id="contactForm">
+    
+    <div>
+      <label class="block text-sm font-medium mb-2">Name</label>
+      <input type="text" 
+             name="name"
+             class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-button text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors" 
+             placeholder="Your Name" 
+             required>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium mb-2">Email</label>
+      <input type="email" 
+             name="email"
+             class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-button text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors" 
+             placeholder="your.email@example.com" 
+             required>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium mb-2">Subject</label>
+      <input type="text" 
+             name="subject"
+             class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-button text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors" 
+             placeholder="Project Inquiry" 
+             required>
+    </div>
+    
+    <div>
+      <label class="block text-sm font-medium mb-2">Message</label>
+      <textarea rows="5" 
+                name="message"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-button text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors resize-none" 
+                placeholder="Tell me about your project..." 
+                required></textarea>
+    </div>
+    
+    <button type="submit" 
+            class="w-full bg-gradient-to-r from-primary to-secondary text-black py-3 px-6 !rounded-button font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all whitespace-nowrap">
+      Send Message
+    </button>
+    
+  </form>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 px-4 bg-gray-900/50 border-t border-gray-800 relative z-10">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="mb-6">
+        <h3 class="text-2xl font-['Pacifico'] text-primary mb-2">Ertawanny</h3>
+        <p class="text-gray-400">Crafting digital experiences that inspire</p>
+      </div>
+      
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="#about" class="text-gray-400 hover:text-primary transition-colors">About</a>
+        <a href="#skills" class="text-gray-400 hover:text-primary transition-colors">Skills</a>
+        <a href="#projects" class="text-gray-400 hover:text-primary transition-colors">Projects</a>
+        <a href="#experience" class="text-gray-400 hover:text-primary transition-colors">Experience</a>
+        <a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-6">
+        <p class="text-gray-500">© 2025 Melqy Ertawanny. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script id="navigation">
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      const closeNav = document.getElementById('closeNav');
+      const navOverlay = document.getElementById('navOverlay');
+      const navLinks = mobileNav.querySelectorAll('a[href^="#"]');
+
+      function openNav() {
+        mobileNav.classList.remove('translate-x-full');
+        navOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      }
+
+      function closeNavigation() {
+        mobileNav.classList.add('translate-x-full');
+        navOverlay.classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      hamburger.addEventListener('click', openNav);
+      closeNav.addEventListener('click', closeNavigation);
+      navOverlay.addEventListener('click', closeNavigation);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            closeNavigation();
+            setTimeout(() => {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+          }
+        });
+      });
+    });
+  </script>
+
+  <script id="smoothScrolling">
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+
+  <script id="skillsAnimation">
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            const width = bar.style.width || bar.classList.toString().match(/w-\[(\d+)%\]/)?.[1] + '%';
+            bar.style.width = '0%';
+            setTimeout(() => {
+              bar.style.width = width;
+            }, 100);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skillBars.forEach(bar => observer.observe(bar));
+    });
+  </script>
+
+  <script id="contactForm">
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+  
+  // Replace these with your bot token & chat ID
+  const BOT_TOKEN = "8309483032:AAEyb9s0rJ8wwBcy1abj8ptiO9O48iEaqGg";
+  const CHAT_ID = "8369352197";  
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const button = form.querySelector('button[type="submit"]');
+    const originalText = button.textContent;
+
+    const name = form.querySelector('input[name="name"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const message = form.querySelector('textarea[name="message"]').value;
+
+    const text = `📩 New Portfolio Message:%0A👤 Name: ${name}%0A📧 Email: ${email}%0A💬 Message: ${message}`;
+
+    button.textContent = 'Sending...';
+    button.disabled = true;
+
+    // Send to Telegram Bot API
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`, {
+      method: "GET"
+    })
+    .then(response => {
+      if (response.ok) {
+        button.textContent = 'Message Sent!';
+        button.classList.remove('from-primary', 'to-secondary');
+        button.classList.add('bg-green-500');
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+          button.classList.remove('bg-green-500');
+          button.classList.add('from-primary', 'to-secondary');
+          form.reset();
+        }, 2000);
+      } else {
+        throw new Error("Failed to send");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      button.textContent = 'Failed!';
+      button.classList.remove('from-primary', 'to-secondary');
+      button.classList.add('bg-red-500');
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+        button.classList.remove('bg-red-500');
+        button.classList.add('from-primary', 'to-secondary');
+      }, 2000);
+    });
+  });
+});
+</script>
+</body>
+</html>
